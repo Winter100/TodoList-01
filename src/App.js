@@ -17,7 +17,6 @@ function App() {
 
     if (localStorageData && localStorageData.length > 0) {
       nextId.current = localStorageData[localStorageData.length - 1].id;
-      console.log(nextId.current);
     } else {
       setTodoInput([]);
     }
@@ -53,16 +52,29 @@ function App() {
     setTodoInput(filterArr);
   };
 
-  const onEditHandler = (id) => {};
+  const onEditHandler = ({ id, value }) => {
+    const updatedItems = todoInput.map((item) => {
+      if (item.id === id) {
+        return { ...item, todo: value };
+      } else {
+        return item;
+      }
+    });
+
+    localStorage.setItem("todo", JSON.stringify(updatedItems));
+    setTodoInput(updatedItems);
+  };
 
   return (
     <Card>
-      {isModal && <Modal setIsModal={setIsModal} />}
+      {isModal && (
+        <Modal setIsModal={setIsModal} mainbody={"최대 목록은 10개 입니다"} />
+      )}
       <Title />
       <MainBody
         todo={todoInput}
         onRemove={onremoveHanlder}
-        onEdit={onEditHandler}
+        onEditValue={onEditHandler}
       />
       <Footer onAddValue={onAddValue} />
     </Card>

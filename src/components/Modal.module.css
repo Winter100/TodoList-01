@@ -7,7 +7,7 @@
   background-color: rgb(174, 238, 121);
 
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -30,5 +30,19 @@
   display: flex;
   height: 30px;
   background-color: rgba(103, 100, 100, 0.3);
-  justify-content: end;
+  justify-content: center;
+}
+
+.Input {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Input input {
+  border-radius: 6px;
+  width: 300px;
+  height: 35px;
+  text-align: center;
 }

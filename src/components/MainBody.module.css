@@ -17,7 +17,9 @@
 }
 
 .span:hover {
-  background-color: rgb(201, 106, 185);
+  background-color: black;
+  color: white;
+  /* background-color: rgb(201, 106, 185); */
 }
 
 .Edit {
@@ -29,4 +31,6 @@
 
 .Edit:hover {
   cursor: pointer;
+  background-color: black;
+  color: white;
 }
