@@ -1,6 +1,32 @@
 .MainBody {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid red;
-  height: 350px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid green;
+  height: 380px;
+}
+
+.todoList span {
+  font-size: 14px;
+}
+
+.pLine {
+  cursor: pointer;
+  width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.span:hover {
+  background-color: rgb(201, 106, 185);
+}
+
+.Edit {
+  margin-right: 15px;
+  background-color: beige;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.Edit:hover {
+  cursor: pointer;
 }
