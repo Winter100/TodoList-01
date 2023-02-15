@@ -1,0 +1,34 @@
+.Modal {
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+  width: 250px;
+  height: 100px;
+  background-color: rgb(174, 238, 121);
+
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Modal button {
+  border-radius: 5px;
+  background-color: burlywood;
+}
+
+.Modal button:hover {
+  cursor: pointer;
+}
+
+.Div {
+  padding: 10px;
+  text-align: center;
+  height: 20px;
+}
+
+.hf {
+  display: flex;
+  height: 30px;
+  background-color: rgba(103, 100, 100, 0.3);
+  justify-content: end;
+}

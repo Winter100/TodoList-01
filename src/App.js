@@ -3,10 +3,12 @@ import "./App.css";
 import Card from "./card/Card";
 import Footer from "./components/Footer";
 import MainBody from "./components/MainBody";
+import Modal from "./components/Modal";
 import Title from "./components/Title";
 
 function App() {
   const [todoInput, setTodoInput] = useState([]);
+  const [isModal, setIsModal] = useState(false);
   const nextId = useRef(0);
 
   useEffect(() => {
@@ -21,11 +23,18 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    if (todoInput.length < 10) {
+      setIsModal(false);
+    }
+  }, [todoInput]);
+
   const onAddValue = (value) => {
     if (todoInput.length >= 10) {
-      //모달창. 최대 10개까지만 가능
+      setIsModal(true);
       return;
     }
+
     const todoArr = [];
 
     todoArr.push(...todoInput, {
@@ -44,10 +53,11 @@ function App() {
     setTodoInput(filterArr);
   };
 
-  const onEditHandler = () => {};
+  const onEditHandler = (id) => {};
 
   return (
     <Card>
+      {isModal && <Modal setIsModal={setIsModal} />}
       <Title />
       <MainBody
         todo={todoInput}
