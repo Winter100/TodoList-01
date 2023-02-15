@@ -65,6 +65,18 @@ function App() {
     setTodoInput(updatedItems);
   };
 
+  const onChangeColorHandler = (id) => {
+    const updatedItems = todoInput.map((item) => {
+      if (item.id === id) {
+        return { ...item, is: !item.is };
+      } else {
+        return item;
+      }
+    });
+    localStorage.setItem("todo", JSON.stringify(updatedItems));
+    setTodoInput(updatedItems);
+  };
+
   return (
     <Card>
       {isModal && (
@@ -75,6 +87,7 @@ function App() {
         todo={todoInput}
         onRemove={onremoveHanlder}
         onEditValue={onEditHandler}
+        onChangeColorHandler={onChangeColorHandler}
       />
       <Footer onAddValue={onAddValue} />
     </Card>

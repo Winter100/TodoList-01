@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./MainBody.module.css";
 import Modal from "./Modal";
-const MainBody = ({ todo, onRemove, onEditValue }) => {
+const MainBody = ({ todo, onRemove, onEditValue, onChangeColorHandler }) => {
   const [onEdit, setOnEdit] = useState(false);
   const [mainBody, setMainBody] = useState("");
   const [mainId, setMainId] = useState("");
@@ -15,6 +15,10 @@ const MainBody = ({ todo, onRemove, onEditValue }) => {
     EditId = item.id;
     setMainBody(EditValues);
     setMainId(EditId);
+  };
+
+  const changeColorHandler = (id) => {
+    onChangeColorHandler(id);
   };
 
   return (
@@ -41,7 +45,8 @@ const MainBody = ({ todo, onRemove, onEditValue }) => {
               수정
             </button>
             <span
-              className={style.span}
+              onClick={() => changeColorHandler(item.id)}
+              className={item.is ? style.isTrue : style.span}
               onDoubleClick={() => onRemove(item.id)}
             >
               {item.todo}
