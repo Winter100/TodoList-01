@@ -39,3 +39,9 @@
   color: red;
   text-decoration: line-through;
 }
+.isTrue:hover {
+  cursor: pointer;
+  background-color: black;
+  color: red;
+  text-decoration: none;
+}
